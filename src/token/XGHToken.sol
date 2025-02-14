@@ -38,7 +38,7 @@ contract XGHToken {
         string memory tokenSymbol //代币符号
     ) {
         owner = msg.sender; // 部署合约的地址为合约拥有者
-        totalSupply = initialSupply * 10 ** uint256(decimals); // 计算代币总供应量
+        totalSupply = initialSupply; // 计算代币总供应量
         _balanceOf[msg.sender] = totalSupply; // 初始化合约创建者的Token数量
         name = tokenName; // 初始化代币名称
         symbol = tokenSymbol; // 初始化代币符号
@@ -221,7 +221,7 @@ contract XGHToken {
     /**************getter方法************** */
     // 获取调用者地址的Token数量
     function balanceOf(address _owner) public view returns (uint256 balance) {
-        require(_owner != address(0)); // 地址不能为0地址
+        require(_owner != address(0), "_owner to the zero address"); // 地址不能为0地址
         return _balanceOf[_owner];
     }
 
@@ -229,8 +229,8 @@ contract XGHToken {
         address _owner,
         address _spender
     ) public view returns (uint256 remaining) {
-        require(_owner != address(0)); // 地址不能为0地址
-        require(_spender != address(0)); // 地址不能为0地址
+        require(_owner != address(0), "_owner to the zero address"); // 地址不能为0地址
+        require(_spender != address(0), "_spender to the zero address"); // 地址不能为0地址
         return _allowance[_owner][_spender];
     }
 }

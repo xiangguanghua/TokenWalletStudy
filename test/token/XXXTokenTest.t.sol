@@ -3,8 +3,8 @@
 pragma solidity ^0.8.28;
 
 import {Test, console} from "forge-std/Test.sol";
-import {XXXToken} from "../src/XXXToken.sol";
-import {DeployXXXToken} from "../script/DeployXXXToken.s.sol";
+import {XXXToken} from "../../src/token/XXXToken.sol";
+import {DeployXXXToken} from "../../script/token/DeployXXXToken.s.sol";
 
 contract XXXTokenTest is Test {
     event Transfer(address indexed, address indexed, uint256);

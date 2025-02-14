@@ -1,3 +1,11 @@
+# 代码介绍
+
+项目代码包括标准 Token 和非同质化 Token。  
+手写版本：XGHToken.sol 和 XGHNfts.sol  
+继承 Openzeppelin 版本：XXXToken.sol 和 XXXNfts.sol
+
+代码包含了部署脚本和大量的测试用例
+
 # XGHToken ERC20 代币功能说明
 
 ERC20 完整实现方案，实现标准 ERC20 方法。支持代币锻造和销毁，支持授权额度新增和减少，支持安全授权。
@@ -39,3 +47,6 @@ XXXToken 继承了 openzeppelin 的 ERC20 和 Ownable 合约，编写了完整�
 5、权限控制测试：铸造权限验证（owner/non-owner）、销毁权限验证（如果有实现）  
 6、边界条件测试：最大金额转账测试、零金额转账测试、整数溢出保护测试（OpenZeppelin 已内置）  
 7、事件验证：转账事件参数验证、授权事件验证
+
+部署测试环境地址：https://sepolia.etherscan.io/address/0x3925a01152249aD550d2A30dA7fCA58c4b0B6D55
+NFT 代币地址：https://sepolia.etherscan.io/token/0x3925a01152249aD550d2A30dA7fCA58c4b0B6D55

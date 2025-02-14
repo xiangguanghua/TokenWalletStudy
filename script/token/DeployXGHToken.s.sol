@@ -2,11 +2,11 @@
 pragma solidity ^0.8.28;
 
 import {Script} from "forge-std/Script.sol";
-import {XGHToken} from "../src/XGHToken.sol";
+import {XGHToken} from "../../src/token/XGHToken.sol";
 import {console} from "forge-std/Test.sol";
 
 contract DeployXGHToken is Script {
-    uint256 public constant INITIAL_SUPPLY = 100000000; //一亿枚
+    uint256 public constant INITIAL_SUPPLY = 1000 ether;
 
     function run() public returns (XGHToken) {
         vm.startBroadcast();
@@ -14,7 +14,7 @@ contract DeployXGHToken is Script {
         vm.stopBroadcast();
 
         // 打印部署的合约地址
-        console.log("XGHToken deployed to:", address(xghToken));
+        //console.log("XGHToken deployed to:", address(xghToken));
         return xghToken;
     }
 }
